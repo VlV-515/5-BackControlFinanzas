@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const inRoutes = require("./routes/inRoutes");
 const outRoutes = require("./routes/outRoutes");
+const otherRoutes = require("./routes/otherRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -21,6 +22,7 @@ mongoose
 app.use(express.json());
 app.use("/in", inRoutes);
 app.use("/out", outRoutes);
+app.use("/other", otherRoutes);
 
 //Routes
 app.get("/", (req, res) => {
