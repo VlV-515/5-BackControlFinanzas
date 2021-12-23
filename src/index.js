@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const inRoutes = require("./routes/inRoutes");
+const outRoutes = require("./routes/outRoutes");
 require("dotenv").config();
 
 const app = express();
@@ -19,6 +20,7 @@ mongoose
 //Middleware
 app.use(express.json());
 app.use("/in", inRoutes);
+app.use("/out", outRoutes);
 
 //Routes
 app.get("/", (req, res) => {

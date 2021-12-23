@@ -1,0 +1,28 @@
+###
+POST http://localhost:3000/out/newOut HTTP/1.1
+Content-Type: application/json
+
+{
+    "quant": 495,
+    "description": "Salida numero 2",
+    "date": "2021-12-04"
+}
+
+###
+GET http://localhost:3000/out/getOut HTTP/1.1
+
+###
+GET http://localhost:3000/out/getOut/61c4be37d962867318786ac2 HTTP/1.1
+
+###
+PUT http://localhost:3000/out/editOut/61c4be37d962867318786ac2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "quant": 1233,
+    "description": "Salida numero 22",
+    "date": "2021-12-01"
+}
+
+###
+DELETE http://localhost:3000/out/deleteOut/61c4bb0df56c8682272f9aec HTTP/1.1
