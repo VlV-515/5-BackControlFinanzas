@@ -1,0 +1,28 @@
+###
+POST http://localhost:3000/in/newIn HTTP/1.1
+Content-Type: application/json
+
+{
+    "quant": 2345,
+    "description": "Entrada numero 2",
+    "date": "2021-12-02"
+}
+
+###
+GET http://localhost:3000/in/getIn HTTP/1.1
+
+###
+GET http://localhost:3000/in/getIn/61c4130616ce7761719a2b8b HTTP/1.1
+
+###
+PUT http://localhost:3000/in/editIn/61c4130616ce7761719a2b8b HTTP/1.1
+Content-Type: application/json
+
+{
+    "quant": 1233,
+    "description": "Entrada numero 11",
+    "date": "2021-12-01"
+}
+
+###
+DELETE http://localhost:3000/in/deleteIn/61c4131916ce7761719a2b8f HTTP/1.1
