@@ -9,7 +9,7 @@ const otherSchema = moongose.Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
 });
