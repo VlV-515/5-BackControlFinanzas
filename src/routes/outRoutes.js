@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const outSchema = require("../models/outModel");
-
 //Crear Salida
 router.post("/newOut", (req, res) => {
   outSchema(req.body)
@@ -41,5 +40,4 @@ router.delete("/deleteOut/:id", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-
 module.exports = router;

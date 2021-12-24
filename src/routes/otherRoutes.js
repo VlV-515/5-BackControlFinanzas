@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const otherSchema = require("../models/otherModel");
-
 //Nuevo Other
 router.post("/newOther", (req, res) => {
   otherSchema(req.body)

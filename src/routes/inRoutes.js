@@ -1,21 +1,21 @@
 const express = require("express");
 const router = express.Router();
 const inSchema = require("../models/inModel");
-//crear entrada
+//Nueva entrada
 router.post("/newIn", (req, res) => {
   inSchema(req.body)
     .save()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-//Retorna todas las entradas
+//Obtiene todas las entradas
 router.get("/getIn", (req, res) => {
   inSchema
     .find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-//Retorna una entrada en especifico
+//Obtiene una entrada en especifico
 router.get("/getIn/:id", (req, res) => {
   const { id } = req.params;
   inSchema
@@ -32,7 +32,7 @@ router.put("/editIn/:id", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-//Edita una entrada
+//Elimina una entrada
 router.delete("/deleteIn/:id", (req, res) => {
   const { id } = req.params;
   inSchema
@@ -40,5 +40,4 @@ router.delete("/deleteIn/:id", (req, res) => {
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-
 module.exports = router;

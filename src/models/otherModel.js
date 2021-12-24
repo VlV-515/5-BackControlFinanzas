@@ -13,5 +13,4 @@ const otherSchema = moongose.Schema({
     required: true,
   },
 });
-
 module.exports = moongose.model("otherSchema", otherSchema);
