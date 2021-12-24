@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors')
 const inRoutes = require("./routes/inRoutes");
 const outRoutes = require("./routes/outRoutes");
 const otherRoutes = require("./routes/otherRoutes");
@@ -20,6 +21,7 @@ mongoose
 
 //Middleware
 app.use(express.json());
+app.use(cors())
 app.use("/in", inRoutes);
 app.use("/out", outRoutes);
 app.use("/other", otherRoutes);

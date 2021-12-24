@@ -50,3 +50,4 @@ npm run start
 - [dotenv](https://www.npmjs.com/package/dotenv) - Utilizada para las variables de entorno.
 - [express](https://expressjs.com/) - Utilizado para crear las peticiones HTTP.
 - [moongose](https://mongoosejs.com/)- Utilizado para la coneccion con la DB.
+- [cors](https://www.npmjs.com/package/cors) - Utilizado para la gestion de accesos en las peticiones HTTP.
