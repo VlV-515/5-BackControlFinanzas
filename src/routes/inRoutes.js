@@ -1,3 +1,4 @@
+//Variables
 const express = require("express");
 const router = express.Router();
 const inSchema = require("../models/inModel");
@@ -5,15 +6,15 @@ const inSchema = require("../models/inModel");
 router.post("/newIn", (req, res) => {
   inSchema(req.body)
     .save()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 //Obtiene todas las entradas
 router.get("/getIn", (req, res) => {
   inSchema
     .find()
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .catch(() => res.json({ msg: "error" }));
 });
 //Obtiene una entrada en especifico
 router.get("/getIn/:id", (req, res) => {
@@ -21,7 +22,7 @@ router.get("/getIn/:id", (req, res) => {
   inSchema
     .findById(id)
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .catch(() => res.json({ msg: "error" }));
 });
 //Edita una entrada
 router.put("/editIn/:id", (req, res) => {
@@ -29,15 +30,15 @@ router.put("/editIn/:id", (req, res) => {
   const { quant, description, date } = req.body;
   inSchema
     .updateOne({ _id: id }, { quant, description, date })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 //Elimina una entrada
 router.delete("/deleteIn/:id", (req, res) => {
   const { id } = req.params;
   inSchema
     .remove({ _id: id })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 module.exports = router;

@@ -5,8 +5,8 @@ const outSchema = require("../models/outModel");
 router.post("/newOut", (req, res) => {
   outSchema(req.body)
     .save()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 //Obtener todas las salidas
 router.get("/getOut", (req, res) => {
@@ -29,15 +29,15 @@ router.put("/editOut/:id", (req, res) => {
   const { quant, description, date } = req.body;
   outSchema
     .updateOne({ _id: id }, { quant, description, date })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 //Eliminar una salida
 router.delete("/deleteOut/:id", (req, res) => {
   const { id } = req.params;
   outSchema
     .remove({ _id: id })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .then(() => res.json({ msg: "ok" }))
+    .catch(() => res.json({ msg: "error" }));
 });
 module.exports = router;
